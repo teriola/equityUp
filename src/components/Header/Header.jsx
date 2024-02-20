@@ -13,7 +13,12 @@ function Header() {
 
     return (
         <div className="hud">
-            <h1 onClick={togglePages}>{currentPage}</h1>
+            <div className="left">
+                <h1 onClick={togglePages}>{currentPage}</h1>
+                <svg className='arrow' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" >
+                    <path d="M6 9l6 6 6-6" />
+                </svg>
+            </div>
 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" >
                 <circle cx="11" cy="11" r="8" />

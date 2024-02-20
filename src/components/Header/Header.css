@@ -5,9 +5,20 @@
     align-items: center;
 }
 
-/* Styling for the main heading */
-h1 {
+.left {
+    display: flex;
+    align-items: center;
     margin-right: auto;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+.left svg {
+    margin-top: .7em;
+}
+
+.left:active {
+    transform: scale(0.8);
 }
 
 /* Styling for the container of the avatar */
