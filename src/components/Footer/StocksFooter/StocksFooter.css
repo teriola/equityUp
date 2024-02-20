@@ -1,0 +1,42 @@
+footer {
+    padding: 1em 0em;
+}
+
+footer a {
+    color: #213547;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Optional: Add some margin to the icons for spacing */
+li svg {
+    margin-bottom: 5px;
+}
+
+.active {
+    color: #000; /* Change the color for the active link if needed */
+}
+
+span {
+    display: block;
+}
+
+svg {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+}

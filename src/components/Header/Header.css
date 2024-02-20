@@ -1,5 +1,5 @@
-/* General HUD styling */
-.hud {
+/* General Header styling */
+.header {
     padding: 0 1em;
     display: flex;
     align-items: center;
