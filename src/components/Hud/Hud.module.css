@@ -1,0 +1,30 @@
+p {
+    margin: 0;
+}
+
+.list {
+    padding: 1em 0em;
+    margin: 0em .4em;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.item {
+    text-align: center;
+}
+
+.value {
+    font-weight: bold;
+}
+
+.green {
+    color: var(--green);
+}
+
+.red {
+    color: var(--red);
+}

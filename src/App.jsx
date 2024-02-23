@@ -13,7 +13,6 @@ function App() {
     <div className={`${AppStyles.appContainer} ${AppStyles[theme]}`}>
       <Header />
 
-      <h1 onClick={toggleTheme}>{theme}</h1>
       <div className="main-content">
         <Routes>
           <Route path="/finance" element={<FinancePage />} />
