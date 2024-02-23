@@ -1,12 +1,8 @@
-footer {
+.footer {
   padding: 1em 0em;
 }
 
-footer a {
-  color: #213547;
-}
-
-ul {
+.list {
   list-style: none;
   padding: 0;
   display: flex;
@@ -14,22 +10,37 @@ ul {
   align-items: center;
 }
 
+.light {
+  color: var(--light-txt-color);
+}
+
+.dark {
+  color: var(--dark-txt-color);
+}
+
+.active {
+  color: var(--light-blue);
+}
+
+/* 
 li {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: var(--light-txt-color);
 }
 
-/* Optional: Add some margin to the icons for spacing */
-li svg {
-  margin-bottom: 5px;
+a.dark {
+  color: var(--dark-txt-color) !important;
 }
 
-.active {
-  color: #000; /* Change the color for the active link if needed */
+a {
+  font-weight: 500;
+  text-decoration: inherit;
 }
+
 
 span {
   display: block;
@@ -40,3 +51,5 @@ svg {
   height: 24px;
   margin-bottom: 5px;
 }
+
+*/
