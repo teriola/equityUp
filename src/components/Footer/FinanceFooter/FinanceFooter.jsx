@@ -1,26 +1,24 @@
 import { NavLink } from 'react-router-dom';
-import FooterStyles from './FinanceFooter.module.css';
 import { useTheme } from '../../../contexts/ThemeContext';
+import FooterStyles from '../Footer.module.css';
 
 function FinanceFooter() {
     const { theme } = useTheme();
     return (
-        <footer className={FooterStyles.footer}>
-            <ul className={FooterStyles.list}>
-                <li>
-                    <NavLink to="/finance/transactions" className={({ isActive }) => isActive ? FooterStyles.active : FooterStyles[theme]}>
-                        <TransactionsIcon />
-                        <span>Transactions</span>
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/finance/stats" className={({ isActive }) => isActive ? FooterStyles.active : FooterStyles[theme]}>
-                        <StatsIcon />
-                        <span>Stats</span>
-                    </NavLink>
-                </li>
-            </ul>
-        </footer>
+        <>
+            <li>
+                <NavLink to="/finance/transactions" className={({ isActive }) => isActive ? FooterStyles.active : FooterStyles[theme]}>
+                    <TransactionsIcon />
+                    <span>Transactions</span>
+                </NavLink>
+            </li>
+            <li>
+                <NavLink to="/finance/stats" className={({ isActive }) => isActive ? FooterStyles.active : FooterStyles[theme]}>
+                    <StatsIcon />
+                    <span>Stats</span>
+                </NavLink>
+            </li>
+        </>
     );
 }
 export default FinanceFooter;

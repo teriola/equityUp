@@ -1,0 +1,38 @@
+svg {
+  width: 2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer {
+  padding: 1em 0em;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.list a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.light {
+  color: var(--light-txt-color);
+}
+
+.dark {
+  color: var(--dark-txt-color);
+}
+
+.active {
+  color: var(--light-blue);
+}

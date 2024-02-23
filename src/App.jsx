@@ -21,8 +21,8 @@ function App() {
           <Route path="/finance/stats" element={<FinancePage />} />
 
           <Route path="/stocks" element={<StocksPage />} />
-          <Route path="/stocks/nav1" element={<StocksPage />} />
-          <Route path="/stocks/nav2" element={<StocksPage />} />
+          <Route path="/stocks/one" element={<StocksPage />} />
+          <Route path="/stocks/two" element={<StocksPage />} />
         </Routes>
       </div>
 
