@@ -1,0 +1,48 @@
+const { Schema, model, Types: { ObjectId } } = require('mongoose');
+const bcrypt = require('bcrypt');
+
+const { SALT_ROUNDS } = require('../config/constants');
+
+const userSchema = new Schema({
+    email: {
+        type: String,
+        required: [true, 'Email is required'],
+        max: 30,
+    },
+    password: {
+        type: String,
+        required: [true, 'Password is required'],
+    },
+    profilePicture: {
+        type: String,
+        default: 'https://www.refugee-action.org.uk/wp-content/uploads/2016/10/anonymous-user.png',
+        match: [/^https?:\/\//, 'Invalid profile picture format'],
+    },
+    description: {
+        type: String,
+        default: '',
+        maxLength: [100, 'Description is too long'],
+    },
+    theme: {
+        type: String,
+        enum: ['light', 'dark'],
+    },
+}, {
+    timestamps: true,
+});
+
+// userSchema.pre('save', function (next) {
+//     return bcrypt.hash(this.password, SALT_ROUNDS)
+//         .then(hash => {
+//             this.password = hash;
+//             return next();
+//         });
+// });
+
+// userSchema.method('validatePassword', function (password) {
+//     return bcrypt.compare(password, this.password);
+// });
+
+const User = model('User', userSchema);
+
+module.exports = User;

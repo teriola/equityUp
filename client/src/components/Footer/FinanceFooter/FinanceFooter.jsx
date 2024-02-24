@@ -9,7 +9,7 @@ function FinanceFooter() {
             <li>
                 <NavLink to="/finance/transactions" className={({ isActive }) => isActive ? FooterStyles.active : FooterStyles[theme]}>
                     <TransactionsIcon />
-                    <span>Transactions</span>
+                    <span>Trans.</span>
                 </NavLink>
             </li>
             <li>
