@@ -1,10 +1,13 @@
-import FinanceFooter from "../../components/Footer/FinanceFooter/FinanceFooter";
 import Hud from "../../components/Hud/Hud";
 import './FinancePage.css';
+import Transactions from "../../components/Transactions/Transactions";
 
 function FinancePage() {
     return (
-        <Hud />
+        <>
+            <Hud />
+            <Transactions />
+        </>
     );
 }
 

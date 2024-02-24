@@ -7,7 +7,7 @@ import Footer from './components/Footer/Footer';
 import { useTheme } from './contexts/ThemeContext';
 
 function App() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={`${AppStyles.appContainer} ${AppStyles[theme]}`}>
