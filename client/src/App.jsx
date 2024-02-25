@@ -5,6 +5,8 @@ import FinancePage from './pages/Finance/FinancePage';
 import StocksPage from './pages/Stocks/StocksPage';
 import Footer from './components/Footer/Footer';
 import { useTheme } from './contexts/ThemeContext';
+import Register from './pages/Register/Register';
+import Login from './pages/Login/Login';
 
 function App() {
   const { theme } = useTheme();
@@ -22,6 +24,9 @@ function App() {
           <Route path="/stocks" element={<StocksPage />} />
           <Route path="/stocks/one" element={<StocksPage />} />
           <Route path="/stocks/two" element={<StocksPage />} />
+
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
 
