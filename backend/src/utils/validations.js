@@ -11,12 +11,6 @@ exports.validateLogin = () => [
 ];
 
 exports.validateRegister = () => [
-    body('name').trim()
-        .notEmpty().withMessage('Name is required')
-        .isLength({ min: 2, max: 12 }).withMessage('Name should be between 2 and 12 characters'),
-    body('surname').trim()
-        .notEmpty().withMessage('Surname is required')
-        .isLength({ min: 2, max: 12 }).withMessage('Surname should be between 2 and 12 characters'),
     body('email').trim()
         .notEmpty().withMessage('Email is required')
         .isLength({ max: 30 }).withMessage('Email is too long')

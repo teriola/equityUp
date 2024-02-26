@@ -15,16 +15,13 @@ router.post('/login',
             const { errors } = validationResult(req);
             if (errors.length > 0) throw errors;
             // Login user
-            const { _id, name, surname, profilePicture, accessToken } = await login({
+            const { _id, accessToken } = await login({
                 email: req.body.email,
                 password: req.body.password,
             });
 
             res.status(200).json({
                 _id,
-                name,
-                surname,
-                profilePicture,
                 accessToken,
             });
         } catch (err) {
@@ -45,19 +42,15 @@ router.post('/register',
         try {
             const { errors } = validationResult(req);
             if (errors.length > 0) throw errors;
+
             // Register user
-            const { _id, name, surname, profilePicture, accessToken } = await register({
-                name: req.body.name,
-                surname: req.body.surname,
+            const { _id, accessToken } = await register({
                 email: req.body.email,
                 password: req.body.password,
             });
 
             res.status(201).json({
                 _id,
-                name,
-                surname,
-                profilePicture,
                 accessToken,
             });
         } catch (err) {
