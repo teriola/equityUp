@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const { Point } = require('@influxdata/influxdb-client');
+const { writeAPI } = require('../config/influxdb');
 const { validationResult } = require('express-validator');
 const { isAuth } = require('../middlewares/authMiddleware');
 const { validateLogin, validateRegister } = require('../utils/validations');
@@ -44,14 +46,27 @@ router.post('/register',
             if (errors.length > 0) throw errors;
 
             // Register user
-            const { _id, accessToken } = await register({
-                email: req.body.email,
-                password: req.body.password,
+            // const { _id, accessToken } = await register({
+            //     email: req.body.email,
+            //     password: req.body.password,
+            // });
+            const point = new Point('transaction')
+                .tag('type', 'sell')
+                .tag('currency', 'bgn')
+                .floatField('amount', 100)
+                .timestamp(new Date().getTime());
+            console.log(point);
+            writeAPI.writePoint(point);
+            writeAPI.close().then(() => {
+                console.log('WriteAPI closed');
+            }).catch((err) => {
+                console.error(err);
             });
 
             res.status(201).json({
-                _id,
-                accessToken,
+                // _id,
+                // accessToken,
+
             });
         } catch (err) {
             res.status(400).json({

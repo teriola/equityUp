@@ -1,6 +1,7 @@
 const express = require('express');
 
 const setupMongoose = require('./config/mongoose');
+const setupInfluxDB = require('./config/influxdb');
 const { PORT } = require('./config/constants');
 const routes = require('./routes');
 const errorHandler = require('./middlewares/errorHandler');
@@ -14,10 +15,8 @@ app.use(routes);
 // app.use(errorHandler);
 
 // Connect to database and start server if successful
-setupMongoose()
-    .then(() => {
-        app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
-    })
-    .catch(err => {
-        console.log(`DB connection error: ${err.message}`);
-    });
+setupMongoose().then(() => {
+    app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
+}).catch(err => {
+    console.error(`DB connection error: ${err.message}`);
+});
