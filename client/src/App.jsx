@@ -1,5 +1,5 @@
 import AppStyles from './App.module.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/Header/Header'
 import FinancePage from './pages/Finance/FinancePage';
 import StocksPage from './pages/Stocks/StocksPage';
@@ -17,6 +17,8 @@ function App() {
 
       <div className="main-content">
         <Routes>
+          <Route path="/" element={<Navigate to="/finance" />} />
+
           <Route path="/finance" element={<FinancePage />} />
           <Route path="/finance/transactions" element={<FinancePage />} />
           <Route path="/finance/stats" element={<FinancePage />} />

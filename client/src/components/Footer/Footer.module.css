@@ -8,6 +8,17 @@ a {
 
 .footer {
   padding: 1em 0em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer.dark {
+  background-color: var(--dark-bg-color);
+}
+
+.footer.light {
+  background-color: var(--light-bg-color);
 }
 
 .list {

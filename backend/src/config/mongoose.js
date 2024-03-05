@@ -7,7 +7,7 @@ async function setupMongoose() {
         config.DB_URI,
         { useNewUrlParser: true, useUnifiedTopology: true },
     );
-    console.log('DB connected');
+    console.log('Mongoose connected');
 }
 
 module.exports = setupMongoose;
