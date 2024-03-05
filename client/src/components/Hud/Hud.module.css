@@ -4,13 +4,23 @@ p {
 
 .list {
     padding: 1em 0em;
-    margin: 0em .4em;
+    margin: 0em;
     list-style: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
+    /* border-top: 1px solid gray;
+    border-bottom: 1px solid gray; */
+    position: sticky;
+    top: 85.54px; /* 85.54px is the height of the header */
+}
+
+.list.dark {
+    background-color: var(--dark-bg-color);
+}
+
+.list.light {
+    background-color: var(--light-bg-color);
 }
 
 .item {
@@ -27,4 +37,23 @@ p {
 
 .red {
     color: var(--red);
+}
+
+/* The following code I have no idea how it works, but it does. I will have to look into it later. */
+.list::before,
+.list::after {
+    content: "";
+    position: absolute;
+    left: 3%; /* Adjust as needed */
+    right: 3%; /* Adjust as needed */
+    border-top: 1px solid gray;
+    height: 1px;
+}
+
+.list::before {
+    top: 0;
+}
+
+.list::after {
+    bottom: 0;
 }

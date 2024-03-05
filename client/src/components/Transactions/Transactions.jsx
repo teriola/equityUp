@@ -5,6 +5,10 @@ function Transactions() {
         <>
             <DailyTransactions />
             <DailyTransactions />
+            <DailyTransactions />
+            <DailyTransactions />
+            <DailyTransactions />
+            <DailyTransactions />
         </>
     );
 }
