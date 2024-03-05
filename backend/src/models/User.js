@@ -9,24 +9,22 @@ const userSchema = new Schema({
         required: [true, 'Email is required'],
         max: 30,
     },
+    username: {
+        type: String,
+        required: [true, 'Username is required'],
+        minLength: [3, 'Username must be at least 3 characters long'],
+        maxLength: [30, 'Username must be at most 30 characters long'],
+    },
     password: {
         type: String,
         required: [true, 'Password is required'],
+        minLength: [6, 'Password must be at least 6 characters long'],
+        maxLength: [18, 'Password must be at most 18 characters long'],
     },
-    profilePicture: {
-        type: String,
-        default: 'https://www.refugee-action.org.uk/wp-content/uploads/2016/10/anonymous-user.png',
-        match: [/^https?:\/\//, 'Invalid profile picture format'],
-    },
-    description: {
-        type: String,
-        default: '',
-        maxLength: [100, 'Description is too long'],
-    },
-    theme: {
-        type: String,
-        enum: ['light', 'dark'],
-    },
+    // theme: {
+    //     type: String,
+    //     enum: ['light', 'dark'],
+    // },
 }, {
     timestamps: true,
 });
