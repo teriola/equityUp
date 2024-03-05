@@ -16,6 +16,7 @@ router.post('/login',
         try {
             const { errors } = validationResult(req);
             if (errors.length > 0) throw errors;
+
             // Login user
             const { _id, accessToken } = await login({
                 email: req.body.email,
@@ -46,26 +47,14 @@ router.post('/register',
             if (errors.length > 0) throw errors;
 
             // Register user
-            // const { _id, accessToken } = await register({
-            //     email: req.body.email,
-            //     password: req.body.password,
-            // });
-            const point = new Point('transaction')
-                .tag('type', 'sell')
-                .tag('currency', 'bgn')
-                .floatField('amount', 100)
-                .timestamp(new Date().getTime());
-            console.log(point);
-            writeAPI.writePoint(point);
-            writeAPI.close().then(() => {
-                console.log('WriteAPI closed');
-            }).catch((err) => {
-                console.error(err);
+            const { _id, accessToken } = await register({
+                email: req.body.email,
+                password: req.body.password,
             });
 
             res.status(201).json({
-                // _id,
-                // accessToken,
+                _id,
+                accessToken,
 
             });
         } catch (err) {
