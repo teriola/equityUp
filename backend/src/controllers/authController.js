@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const { Point } = require('@influxdata/influxdb-client');
+const { writeAPI } = require('../config/influxdb');
 const { validationResult } = require('express-validator');
 const { isAuth } = require('../middlewares/authMiddleware');
 const { validateLogin, validateRegister } = require('../utils/validations');
@@ -14,6 +16,7 @@ router.post('/login',
         try {
             const { errors } = validationResult(req);
             if (errors.length > 0) throw errors;
+
             // Login user
             const { _id, accessToken } = await login({
                 email: req.body.email,
@@ -52,6 +55,7 @@ router.post('/register',
             res.status(201).json({
                 _id,
                 accessToken,
+
             });
         } catch (err) {
             res.status(400).json({
