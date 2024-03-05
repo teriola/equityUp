@@ -11,7 +11,7 @@ function Footer() {
     return (
         <footer className={`${FooterStyles.footer} ${FooterStyles[theme]}`}>
             <ul className={FooterStyles.list}>
-                {currentPage == 'Finance' ? <FinanceFooter /> : <StocksFooter />}
+                {currentPage == 'Finance' ? <FinanceFooter /> : (currentPage === 'Stocks' ? <StocksFooter /> : null)}
             </ul>
         </footer>
     );
