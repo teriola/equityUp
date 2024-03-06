@@ -2,46 +2,53 @@ import LoginStyles from './Login.module.css';
 import { useForm } from 'react-hook-form';
 
 function Login() {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = async ({ email, password }) => {
-        try {
-            // const user = await login(email, password);
-
-        } catch (err) {
-            console.log(err);
-        }
+    const onLogin = ({ email, password }) => {
+        console.log({ email, password });
     }
 
     return (
-        <form className={LoginStyles.loginForm} onSubmit={handleSubmit(onSubmit)}>
-            {/* {errors.email?.type === 'required' && <span className="text-sm absolute -top-6 left-2 text-red-500">Email is required</span>}
-            {errors.email?.type === 'pattern' && <span className="text-sm absolute -top-6 left-2 text-red-500">Ivalid email</span>} */}
-            <input
-                className={LoginStyles.inputField}
-                name="email"
-                placeholder="Email"
-                {...register('email', { required: true, pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ })}
-                // aria-invalid={errors.email ? 'true' : 'false'} 
-                />
-            {/* {errors.password?.type === 'required' && <span className="text-sm absolute top-9 left-2 text-red-500">Password is required</span>}
-            {errors.password?.type === 'minLength' && <span className="text-sm absolute top-9 left-2 text-red-500">Password is too short</span>} */}
-            <input
-                className={LoginStyles.inputField}
-                name="password"
-                type="password"
-                placeholder="Password"
-                {...register('password', { required: true, minLength: 6 })}
-                // aria-invalid={errors.password ? 'true' : 'false'} 
-                />
-            {/* <span className="text-sm absolute top-24 left-2 text-red-500">{errors.server && errors.server.message}</span> */}
-            <input
-                className={LoginStyles.submitBtn}
-                type="submit"
-                // disabled={isSubmitting || isLoading}
-                // value={isLoading ? "Logging in..." : "Login"} 
-                />
-        </form>
+        <>
+            <form className={LoginStyles.form} onSubmit={handleSubmit(onLogin)}>
+
+                {/* EMAIL */}
+                <div className={LoginStyles.control}>
+                    <label htmlFor="email">Email</label>
+                    <input {...register('email', {
+                        required: 'Email is required',
+                        maxLength: {
+                            value: 30,
+                            message: 'Email is too long'
+                        },
+                        pattern: {
+                            value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                            message: 'Invalid email'
+                        }
+                    })} type="email" id="email" />
+                    {errors.email && <p className={LoginStyles.error}>{errors.email.message}</p>}
+                </div>
+
+                {/* PASSWORD */}
+                <div className={LoginStyles.control}>
+                    <label htmlFor="password">Password</label>
+                    <input {...register('password', {
+                        required: 'Password is required',
+                        minLength: {
+                            value: 6,
+                            message: 'Password must be at least 6 characters long'
+                        },
+                        maxLength: {
+                            value: 18,
+                            message: 'Password must be at most 18 characters long'
+                        }
+                    })} type="password" id="password" />
+                    {errors.password && <p className={LoginStyles.error}>{errors.password.message}</p>}
+                </div>
+
+                <button>Login</button>
+            </form>
+        </>
     );
 }
 
