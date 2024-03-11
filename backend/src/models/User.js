@@ -18,8 +18,6 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: [true, 'Password is required'],
-        minLength: [6, 'Password must be at least 6 characters long'],
-        maxLength: [18, 'Password must be at most 18 characters long'],
     },
     // theme: {
     //     type: String,

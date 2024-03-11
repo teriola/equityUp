@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import { useTheme } from './contexts/ThemeContext';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
+import { publicRoute } from './hoc/publicRoute';
 
 function App() {
   const { theme } = useTheme();
@@ -17,9 +18,11 @@ function App() {
 
       <div className="main-content">
         <Routes>
-          <Route path="/" element={<Navigate to="/finance" />} />
+          {/* Reroute to correct page */}
+          <Route path="/" element={<Navigate to="/finance/transactions" />} />
+          <Route path="/finance" element={<Navigate to="/finance/transactions" />} />
 
-          <Route path="/finance" element={<FinancePage />} />
+          {/* Routes-------------------------------------------------------- */}
           <Route path="/finance/transactions" element={<FinancePage />} />
           <Route path="/finance/stats" element={<FinancePage />} />
 
@@ -27,8 +30,8 @@ function App() {
           <Route path="/stocks/one" element={<StocksPage />} />
           <Route path="/stocks/two" element={<StocksPage />} />
 
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={publicRoute(Register)} />
+          <Route path="/login" element={publicRoute(Login)} />
         </Routes>
       </div>
 

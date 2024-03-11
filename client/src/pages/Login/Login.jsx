@@ -1,11 +1,18 @@
+import { useAuth } from '../../contexts/AuthContext';
+import { loginUser } from '../../services/authService';
 import LoginStyles from './Login.module.css';
 import { useForm } from 'react-hook-form';
 
 function Login() {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const { setUser } = useAuth();
 
     const onLogin = ({ email, password }) => {
-        console.log({ email, password });
+        loginUser(email, password).then((userData) => {
+            setUser(userData);
+        }).catch(err => {
+            console.log(err);
+        });
     }
 
     return (

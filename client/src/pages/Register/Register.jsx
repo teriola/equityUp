@@ -1,11 +1,18 @@
 import RegisterStyles from './Register.module.css';
+import { registerUser } from '../../services/authService';
 import { useForm } from 'react-hook-form';
+import { useAuth } from '../../contexts/AuthContext';
 
 function Register() {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const { setUser } = useAuth();
 
     const onRegister = ({ email, username, password, rePassword }) => {
-        console.log({ email, username, password, rePassword });
+        registerUser({ email, username, password, rePassword }).then((userData) => {
+            setUser(userData);
+        }).catch(err => {
+            console.log(err);
+        });
     }
 
     return (

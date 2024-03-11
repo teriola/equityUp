@@ -49,6 +49,7 @@ router.post('/register',
             // Register user
             const { _id, accessToken } = await register({
                 email: req.body.email,
+                username: req.body.username,
                 password: req.body.password,
             });
 
