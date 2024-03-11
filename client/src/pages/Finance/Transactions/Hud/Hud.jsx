@@ -1,4 +1,4 @@
-import { useTheme } from '../../contexts/ThemeContext';
+import { useTheme } from '../../../../contexts/ThemeContext';
 import HudStyles from './Hud.module.css';
 
 function Hud() {

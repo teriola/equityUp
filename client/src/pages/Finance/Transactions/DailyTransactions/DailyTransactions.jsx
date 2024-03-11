@@ -1,6 +1,6 @@
 import Transaction from '../Transaction/Transaction';
 import DailyTransactionsStyles from './DailyTransactions.module.css';
-import { useTheme } from '../../../contexts/ThemeContext';
+import { useTheme } from '../../../../contexts/ThemeContext';
 
 function DailyTransactions() {
     const { theme } = useTheme();
