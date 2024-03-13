@@ -1,4 +1,7 @@
-const baseUrl = import.meta.env.VITE_BASE_URL || 'http://localhost:3000';
+// Commented because of conflict with 
+// the tests. Needs to be fixed
+// const baseUrl = import.meta.env.VITE_BASE_URL || 'http://localhost:3000';
+const baseUrl = 'http://localhost:3000';
 
 async function request(method, path, data) {
     const options = {

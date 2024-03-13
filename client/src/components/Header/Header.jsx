@@ -1,7 +1,7 @@
 import HeaderStyles from './Header.module.css';
 import useCurrentPage from '../../hooks/useCurrentPage';
 import { Link, useNavigate } from 'react-router-dom';
-import { useTheme } from '../../contexts/ThemeContext';
+import { useTheme } from "../../contexts/ThemeContext";
 import { useAuth } from '../../contexts/AuthContext';
 import Avatar from './Avatar/Avatar';
 

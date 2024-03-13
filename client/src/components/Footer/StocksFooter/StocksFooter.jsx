@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import FooterStyles from '../Footer.module.css';
-import { useTheme } from '../../../contexts/ThemeContext';
+import { useTheme } from "../../../contexts/ThemeContext";
 
 
 function StocksFooter() {

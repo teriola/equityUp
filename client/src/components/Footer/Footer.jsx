@@ -2,7 +2,7 @@ import useCurrentPage from "../../hooks/useCurrentPage";
 import FinanceFooter from "./FinanceFooter/FinanceFooter";
 import StocksFooter from "./StocksFooter/StocksFooter";
 import FooterStyles from './Footer.module.css';
-import { useTheme } from "../../contexts/ThemeContext";
+import { useTheme } from '../../contexts/ThemeContext';
 
 function Footer() {
     const currentPage = useCurrentPage();
