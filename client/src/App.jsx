@@ -22,11 +22,12 @@ function App() {
           <Route path="/" element={<Navigate to="/finance/transactions" />} />
           <Route path="/finance" element={<Navigate to="/finance/transactions" />} />
 
+          <Route path="/stocks" element={<Navigate to="/stocks/one" />} />
+
           {/* Routes-------------------------------------------------------- */}
           <Route path="/finance/transactions" element={<FinancePage />} />
           <Route path="/finance/stats" element={<FinancePage />} />
 
-          <Route path="/stocks" element={<StocksPage />} />
           <Route path="/stocks/one" element={<StocksPage />} />
           <Route path="/stocks/two" element={<StocksPage />} />
 
@@ -40,4 +41,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

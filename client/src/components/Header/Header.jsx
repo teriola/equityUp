@@ -17,7 +17,7 @@ function Header() {
     // }
 
     return (
-        <header className={`${HeaderStyles.header} ${HeaderStyles[theme]}`}>
+        <header data-testid='header' className={`${HeaderStyles.header} ${HeaderStyles[theme]}`}>
             <div className={HeaderStyles.left}>
                 <h1>{currentPage}</h1>
                 {/* onClick={togglePages} */}
