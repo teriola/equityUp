@@ -1,26 +1,26 @@
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-    /* ANY THEME */
-    --light-blue: #646cff;
-    --dark-blue: #535bf2;
-    --green: #8BC34A;
-    --red: #EF5350;
+  /* ANY THEME */
+  --light-blue: #646cff;
+  --dark-blue: #535bf2;
+  --green: #8BC34A;
+  --red: #EF5350;
 
-    /* LIGHT THEME */
-    --light-txt-color: #213547;
-    --light-bg-color: #ffffff;
+  /* LIGHT THEME */
+  --light-txt-color: #213547;
+  --light-bg-color: #ffffff;
 
-    /* DARK THEME */
-    --dark-txt-color: rgba(255, 255, 255, 0.87);
-    --dark-bg-color: #242424;
+  /* DARK THEME */
+  --dark-txt-color: rgba(255, 255, 255, 0.87);
+  --dark-bg-color: #242424;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }

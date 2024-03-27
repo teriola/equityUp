@@ -3,23 +3,23 @@ import { createContext, useContext, useState } from 'react';
 const AuthContext = createContext({ auth: {} });
 
 export function AuthProvider({ children }) {
-    const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useState({});
 
-    const setUser = (user) => {
-        setAuth(user);
-    }
+  const setUser = (user) => {
+    setAuth(user);
+  }
 
-    const clearUser = () => {
-        setAuth({});
-    }
+  const clearUser = () => {
+    setAuth({});
+  }
 
-    return (
-        <AuthContext.Provider value={{ auth, setUser, clearUser }}>
-            {children}
-        </AuthContext.Provider>
-    );
+  return (
+    <AuthContext.Provider value={{ auth, setUser, clearUser }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 export const useAuth = () => {
-    return useContext(AuthContext);
+  return useContext(AuthContext);
 }

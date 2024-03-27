@@ -3,23 +3,23 @@ import { useTheme } from "../../../contexts/ThemeContext";
 import FooterStyles from '../Footer.module.css';
 
 function FinanceFooter() {
-    const { theme } = useTheme();
-    return (
-        <>
-            <li>
-                <NavLink to="/finance/transactions" className={({ isActive }) => isActive ? FooterStyles.active : FooterStyles[theme]}>
-                    <TransactionsIcon />
-                    <span>Trans.</span>
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to="/finance/stats" className={({ isActive }) => isActive ? FooterStyles.active : FooterStyles[theme]}>
-                    <StatsIcon />
-                    <span>Stats</span>
-                </NavLink>
-            </li>
-        </>
-    );
+  const { theme } = useTheme();
+  return (
+    <>
+      <li>
+        <NavLink to="/finance/transactions" className={({ isActive }) => isActive ? FooterStyles.active : FooterStyles[theme]}>
+          <TransactionsIcon />
+          <span>Trans.</span>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/finance/stats" className={({ isActive }) => isActive ? FooterStyles.active : FooterStyles[theme]}>
+          <StatsIcon />
+          <span>Stats</span>
+        </NavLink>
+      </li>
+    </>
+  );
 }
 export default FinanceFooter;
 

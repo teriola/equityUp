@@ -1,38 +1,38 @@
 /* General Header styling */
 .header {
-    padding: 0 1em;
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    
+  padding: 0 1em;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+
 }
 
 .header.dark {
-    background-color: var(--dark-bg-color);
+  background-color: var(--dark-bg-color);
 }
 
 .header.light {
-    background-color: var(--light-bg-color);
+  background-color: var(--light-bg-color);
 }
 
 .left {
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-    /* transition: transform 0.1s ease-in-out; */
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  /* transition: transform 0.1s ease-in-out; */
 }
 
 .left svg {
-    margin-top: 0.8em;
+  margin-top: 0.8em;
 }
 
 /* .left:active {
-    transform: scale(0.8);
+transform: scale(0.8);
 } */
 
 /* Styling for SVG elements .left and the avatar container */
 svg,
 .left {
-    cursor: pointer;
+  cursor: pointer;
 }

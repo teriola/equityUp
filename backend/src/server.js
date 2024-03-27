@@ -16,7 +16,7 @@ app.use(routes);
 
 // Connect to database and start server if successful
 setupMongoose().then(() => {
-    app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
+  app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
 }).catch(err => {
     console.error(`DB connection error: ${err.message}`);
-});
+  });

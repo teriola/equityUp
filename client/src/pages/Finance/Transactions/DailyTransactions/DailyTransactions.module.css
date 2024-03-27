@@ -1,37 +1,37 @@
 .card {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    width: 90vw;
-    margin: 1em 0em;
-    padding: 1em;
+  width: 90vw;
+  margin: 1em 0em;
+  padding: 1em;
 
-    /* max-width: 400px; Adjust max-width as needed for larger screens */
-    /* border-radius: 10px; */
+  /* max-width: 400px; Adjust max-width as needed for larger screens */
+  /* border-radius: 10px; */
 }
 
 .top {
-    border-bottom: 1px solid gray;
-    padding-bottom: 0.5em;
+  border-bottom: 1px solid gray;
+  padding-bottom: 0.5em;
 }
 
 .transactions {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .dark {
-    background-color: var(--dark-bg-color);
-    color: var(--dark-txt-color);
-    box-shadow:
-        0 -4px 8px rgba(255, 255, 255, 0.1),
-        0 4px 8px rgba(255, 255, 255, 0.1);
+  background-color: var(--dark-bg-color);
+  color: var(--dark-txt-color);
+  box-shadow:
+    0 -4px 8px rgba(255, 255, 255, 0.1),
+    0 4px 8px rgba(255, 255, 255, 0.1);
 }
 
 .light {
-    background-color: var(--light-bg-color);
-    color: var(--light-txt-color);
-    box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.1),
-        0 -4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--light-bg-color);
+  color: var(--light-txt-color);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 -4px 8px rgba(0, 0, 0, 0.1);
 }

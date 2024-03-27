@@ -1,59 +1,59 @@
 p {
-    margin: 0;
+  margin: 0;
 }
 
 .list {
-    padding: 1em 0em;
-    margin: 0em;
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    /* border-top: 1px solid gray;
-    border-bottom: 1px solid gray; */
-    position: sticky;
-    top: 85.54px; /* 85.54px is the height of the header */
+  padding: 1em 0em;
+  margin: 0em;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border-top: 1px solid gray;
+border-bottom: 1px solid gray; */
+  position: sticky;
+  top: 85.54px; /* 85.54px is the height of the header */
 }
 
 .list.dark {
-    background-color: var(--dark-bg-color);
+  background-color: var(--dark-bg-color);
 }
 
 .list.light {
-    background-color: var(--light-bg-color);
+  background-color: var(--light-bg-color);
 }
 
 .item {
-    text-align: center;
+  text-align: center;
 }
 
 .value {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .green {
-    color: var(--green);
+  color: var(--green);
 }
 
 .red {
-    color: var(--red);
+  color: var(--red);
 }
 
 /* The following code I have no idea how it works, but it does. I will have to look into it later. */
 .list::before,
 .list::after {
-    content: "";
-    position: absolute;
-    left: 3%; /* Adjust as needed */
-    right: 3%; /* Adjust as needed */
-    border-top: 1px solid gray;
-    height: 1px;
+  content: "";
+  position: absolute;
+  left: 3%; /* Adjust as needed */
+  right: 3%; /* Adjust as needed */
+  border-top: 1px solid gray;
+  height: 1px;
 }
 
 .list::before {
-    top: 0;
+  top: 0;
 }
 
 .list::after {
-    bottom: 0;
+  bottom: 0;
 }
