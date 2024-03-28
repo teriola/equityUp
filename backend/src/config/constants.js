@@ -8,7 +8,7 @@ module.exports = {
   SALT_ROUNDS: process.env.SALT_ROUNDS || 10,
   TOKEN_NAME: process.env.TOKEN_NAME || 'x-authorization',
   INFLUXDB_URL: process.env.INFLUXDB_URL || 'http://localhost:8086',
-  INFLUXDB_TOKEN: process.env.INFLUXDB_TOKEN || 'my-token',
+  INFLUXDB_TOKEN: process.env.INFLUXDB_TOKEN || '',
   INFLUXDB_ORG: process.env.INFLUXDB_ORG || 'my-org',
   INFLUXDB_BUCKET: process.env.INFLUXDB_BUCKET || 'my-bucket',
 };

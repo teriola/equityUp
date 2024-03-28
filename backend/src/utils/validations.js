@@ -25,3 +25,17 @@ exports.validateRegister = () => [
   body('rePassword').trim()
   .custom((value, { req }) => value === req.body.password).withMessage('Passwords don\'t match'),
 ];
+
+// Transactions controller
+exports.validateTransaction = () => [
+  body('type').trim()
+  .notEmpty().withMessage('Type is required')
+  .isIn(['income', 'expense']).withMessage('Type must be "income" or "expense"'),
+  body('currency').trim()
+  .notEmpty().withMessage('Currency is required')
+  .isLength({ max: 9 }).withMessage('Currency is too long'),
+  body('amount').trim()
+  .notEmpty().withMessage('Amount is required')
+  .isNumeric().withMessage('Amount must be a number')
+  .custom(value => value > 0).withMessage('Amount must be positive'),
+];

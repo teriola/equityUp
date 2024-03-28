@@ -1,10 +1,10 @@
 const express = require('express');
 
 const setupMongoose = require('./config/mongoose');
-const setupInfluxDB = require('./config/influxdb');
+//const setupInfluxDB = require('./config/influxdb');
 const { PORT } = require('./config/constants');
 const routes = require('./routes');
-const errorHandler = require('./middlewares/errorHandler');
+//const errorHandler = require('./middlewares/errorHandler');
 
 // Initialize express app
 const app = express();

@@ -1,21 +1,15 @@
-const { Point, InfluxDB, FieldType } = require('@influxdata/influxdb-client');
+const { Point } = require('@influxdata/influxdb-client');
 const { writeAPI } = require('../config/influxdb');
 
 exports.createTransaction = async ({ type, currency, amount }) => {
-  const transaction = new Point('transaction')
+  // Create a new transaction
+  const transaction = new Point('transactions')
   .tag('type', type)
   .tag('currency', currency)
   .floatField('amount', amount)
-  .timestamp(new Date().getTime());
+  .timestamp(new Date());
 
-  console.log(transaction);
-
+  // Write the transaction to the database and return it
   writeAPI.writePoint(transaction);
-
-  writeAPI.close().then(() => {
-    console.log('Write finished');
-    return transaction;
-  }).catch(e => {
-      console.error(e);
-    });
+  return transaction;
 }

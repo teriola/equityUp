@@ -18,7 +18,7 @@ exports.register = async userData => {
   });
   const accessToken = await createToken(user);
   return {
-    // _id: user._id,
+    _id: user._id,
     accessToken,
   };
 }
@@ -34,7 +34,7 @@ exports.login = async ({ email, password }) => {
 
   const accessToken = await createToken(user);
   return {
-    // _id: user._id,
+    _id: user._id,
     accessToken,
   };
 }

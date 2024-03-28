@@ -1,5 +1,6 @@
 node_modules
 .env
+endpoints
 
 # Editor directories and files
 .vscode/*
@@ -11,3 +12,4 @@ node_modules
 *.njsproj
 *.sln
 *.sw?
+

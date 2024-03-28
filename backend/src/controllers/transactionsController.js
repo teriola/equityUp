@@ -1,6 +1,7 @@
 const { isAuth } = require('../middlewares/authMiddleware');
 const { createTransaction } = require('../services/transactionsService');
 const { parseError } = require('../utils/parser');
+const { validateTransaction } = require('../utils/validations');
 
 const router = require('express').Router();
 
@@ -8,14 +9,15 @@ const router = require('express').Router();
 // POST /transactions/create
 // Private
 router.post('/create',
-  // isAuth,
-  // validateTransaction(),
+  isAuth,
+  validateTransaction(),
   async (req, res) => {
     try {
       const data = await createTransaction(req.body);
+      console.log(data);
 
       res.status(201).json({
-        // data
+        data
       });
     } catch (err) {
       res.status(400).json({
