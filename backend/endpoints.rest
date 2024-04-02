@@ -16,7 +16,8 @@ POST /auth/login
 
 // TRANSACTIONS
 http://localhost:3000
-x-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA1ZGExMzExYjRjYjgxNzU0YjhhZDYiLCJlbWFpbCI6ImJrcmlzdGlxbjdAZ21haWwuY29tIiwiaWF0IjoxNzExNjY1NTg1fQ.eYVeMu82zpjs2W0y6NFGfXw_Ura9-g52vvo_gWWpkQI
+x-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA1ZGExMzExYjRjYjgxNzU0YjhhZDYiLCJlbWFpbCI6ImJrcmlzdGlxbjdAZ21haWwuY29tIiwiaWF0IjoxNzExOTIzMjgzfQ.vldPexzAV5wgVtmOuNoLWijyGHkTplzv4GZCC1XLHDs 
+Authorization: Token detZkMFenUyJBs4rJ22fY9LAwVwzfdfkTDNEpUTHQoQUJMHLrErGJyHg89uy71MyuHJfNA3LaJdmDAlLqUeiWw==
 POST /transactions/create
 {
   "type": "income",
@@ -24,3 +25,7 @@ POST /transactions/create
   "category": "salary",
   "amount": 1000
 }
+http://localhost:3000
+x-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA1ZGExMzExYjRjYjgxNzU0YjhhZDYiLCJlbWFpbCI6ImJrcmlzdGlxbjdAZ21haWwuY29tIiwiaWF0IjoxNzExOTIzMjgzfQ.vldPexzAV5wgVtmOuNoLWijyGHkTplzv4GZCC1XLHDs 
+Authorization: Token detZkMFenUyJBs4rJ22fY9LAwVwzfdfkTDNEpUTHQoQUJMHLrErGJyHg89uy71MyuHJfNA3LaJdmDAlLqUeiWw==
+Get /transactions

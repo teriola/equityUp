@@ -13,3 +13,21 @@ exports.createTransaction = async ({ type, currency, amount }) => {
   writeAPI.writePoint(transaction);
   return transaction;
 }
+
+exports.getTransactions = async () => {
+  // Query all transactions from the database
+  const query = 'from(bucket: "transactions") |> range(start: -1h)';
+  writeAPI.queryRows(query, {
+    next: (row, tableData) => {
+      console.log(row);
+      console.log('-----------------------------');
+      console.log(tableData);
+    },
+    error: (err) => {
+      console.error(err);
+    },
+    complete: () => {
+      console.log('Success');
+    },
+  });
+}

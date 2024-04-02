@@ -1,5 +1,5 @@
 const { isAuth } = require('../middlewares/authMiddleware');
-const { createTransaction } = require('../services/transactionsService');
+const { createTransaction, getTransactions } = require('../services/transactionsService');
 const { parseError } = require('../utils/parser');
 const { validateTransaction } = require('../utils/validations');
 
@@ -13,11 +13,32 @@ router.post('/create',
   validateTransaction(),
   async (req, res) => {
     try {
-      const data = await createTransaction(req.body);
-      console.log(data);
+      const transaction = await createTransaction(req.body);
+      console.log(transaction);
 
       res.status(201).json({
-        data
+        transaction,
+      });
+    } catch (err) {
+      res.status(400).json({
+        message: 'Invalid transaction data',
+        errors: parseError(err)
+      });
+    }
+  });
+
+// Get all transactions
+// GET /transactions
+// Private
+router.get('/',
+  isAuth,
+  async (req, res) => {
+    try {
+      const transactions = await getTransactions();
+      console.log(transactions);
+
+      res.status(201).json({
+        transactions,
       });
     } catch (err) {
       res.status(400).json({
